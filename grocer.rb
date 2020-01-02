@@ -37,7 +37,7 @@ def consolidate_cart(cart)
       end
       index += 1
     end
-
+    print item_desc_count_ary
 end
 
 def apply_coupons(cart, coupons)

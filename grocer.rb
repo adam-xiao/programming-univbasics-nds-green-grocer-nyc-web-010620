@@ -3,15 +3,14 @@ def find_item_by_name_in_collection(name, collection)
   #
   # Consult README for inputs and outputs
   index = 0
-  collection[0][:item]
-  #while index < collection.length do
-  #  if name == collection[index]
+  while index < collection.length do
+    if name == collection[index][:item]
+      return collection[index]
+    else
+      nil
+    end
 
-  #  else
-
-  #  end
-
-  #end
+  end
 
 end
 

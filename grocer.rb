@@ -44,8 +44,15 @@ def format_coupon(coupon)
     :price => price_sig_fig,
     :count => coupon[:num]
   }
+end
 
+def format_coupon_cart(item, coupon, cart)
 
+  formatted_coupon = format_coupon(coupon)
+  formatted_coupon[:clearance] = item[:clearance]
+  item[:count] -= coupon[:num]
+  cart << formatted_coupon
+  
 end
 
 def apply_coupons(cart, coupons)

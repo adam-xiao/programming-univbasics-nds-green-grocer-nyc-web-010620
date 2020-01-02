@@ -37,8 +37,12 @@ def consolidate_cart(cart)
 end
 
 def format_coupon(coupon)
-  coupon_cart_format = {
-    :item => "#{coupon[:item]} W/ COUPON"
+  price_sig_fig = (coupon[:cost] / coupon[:num]).round(2)
+  
+  {
+    :item => "#{coupon[:item]} W/ COUPON",
+    :price => price_sig_fig,
+    :count => coupon[:num]
   }
 
 

@@ -52,7 +52,7 @@ def format_coupon_cart(item, coupon, cart)
   formatted_coupon[:clearance] = item[:clearance]
   item[:count] -= coupon[:num]
   cart << formatted_coupon
-  
+
 end
 
 def apply_coupons(cart, coupons)

@@ -74,6 +74,13 @@ def apply_clearance(cart)
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
+  index = 0 
+  while index < cart.length do
+    clearance_rate = 0.2
+    if cart[index][:clearance]
+      cart[index][:price] = ((1 - clearance_rate) * cart[index][:price]).round(2)
+  end
+  index += 1
 end
 
 def checkout(cart, coupons)

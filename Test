@@ -1,0 +1,42 @@
+index = 0
+non_uniq_items = []
+while index < cart.length do
+  items_and_desc = cart[index]
+  non_uniq_items << items_and_desc[:item]
+  index += 1
+end
+~~~~~
+index = 0
+consolidated_cart = []
+while index < cart.length
+  item_name = cart[index][:item]
+  consolidated_cart << find_item_by_name_in_collection(item_name, cart)
+  index += 1
+
+end
+~~~~~
+
+
+
+index = 0
+item_desc_count_ary = []
+
+while index < cart.length do
+    item_desc = cart[index]
+    item_count = 0
+
+    if find_item_by_name_in_collection(item_desc[:item], cart)
+      item_count += 1
+
+      item_desc_count = {
+        :item => item_desc[:item],
+        :price => item_desc[:price],
+        :clearance => item_desc[:clearance],
+        :count => item_count
+      }
+
+      item_desc_count_ary << item_desc_count
+    end
+    index += 1
+  end
+  print item_desc_count_ary

@@ -26,7 +26,7 @@ def consolidate_cart(cart)
     index += 1
 
   end
-  print consolidated_cart
+  print cart[0][:item].count
 
 end
 

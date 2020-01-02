@@ -26,7 +26,7 @@ def consolidate_cart(cart)
     index += 1
 
   end
-  print cart
+  print consolidated_cart
 
 end
 

@@ -99,7 +99,7 @@ def checkout(cart, coupons)
   index = 0
   total_sale = 0.1
   consolidated_cart = consolidate_cart(cart)
-  apply_coupons(consolidated_cart, coupon) #mutates cart
+  apply_coupons(consolidated_cart, coupons) #mutates cart
   apply_clearance(consolidated_cart) #mutates cart
 
   while index < consolidated_cart.length do

@@ -36,44 +36,40 @@ def consolidate_cart(cart)
   item_desc_count
 end
 
-def mk_coupon_hash(c)
-  rounded_unit_price = (c[:cost].to_f * 1.0 / c[:num]).round(2)
+def format_coupon(coupon)
+  price_sig_fig = (coupon[:cost] / coupon[:num]).round(2)
   {
-    :item => "#{c[:item]} W/COUPON",
-    :price => rounded_unit_price,
-    :count => c[:num]
+    :item => "#{coupon[:item]} W/COUPON",
+    :price => price_sig_fig,
+    :count => coupon[:num]
   }
 end
 
-# A nice "First Order" method to use in apply_coupons
+def format_coupon_cart(item, coupon, cart)
+  item[:count] -= coupon[:num]
+  formatted_coupon = format_coupon(coupon)
+  formatted_coupon[:clearance] = item[:clearance]
 
-def apply_coupon_to_cart(matching_item, coupon, cart)
-  matching_item[:count] -= coupon[:num]
-  item_with_coupon = mk_coupon_hash(coupon)
-  item_with_coupon[:clearance] = matching_item[:clearance]
-  cart << item_with_coupon
+  cart << formatted_coupon
 end
-
 
 def apply_coupons(cart, coupons)
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
-  i = 0
- while i < coupons.count do
-   coupon = coupons[i]
-   item_with_coupon = find_item_by_name_in_collection(coupon[:item], cart)
-   item_is_in_basket = !!item_with_coupon
-   count_is_big_enough_to_apply = item_is_in_basket && item_with_coupon[:count] >= coupon[:num]
+  index = 0
+  while index < coupons.length do
+    coupon = coupons[index]
+    item_has_coupon = find_item_by_name_in_collection(coupon[:item], cart)
+    item_in_cart = !!item_has_coupon
+    enough_items_coupon = item_in_cart && item_has_coupon[:count] >= coupon[:num]
 
-   if item_is_in_basket and count_is_big_enough_to_apply
-     apply_coupon_to_cart(item_with_coupon, coupon, cart)
-   end
-   i += 1
- end
-
- cart
-
+    if item_in_cart && enough_items_coupon
+      format_coupon_cart(item_has_coupon, coupon, cart)
+    end
+    index += 1
+  end
+  cart
 end
 
 def apply_clearance(cart)

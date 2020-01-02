@@ -25,7 +25,7 @@ def consolidate_cart(cart)
     item_name = cart[index][:item]
     item_desc = find_item_by_name_in_collection(item_name, item_desc_count) #returns a hash from info provided
 
-    if item_desc
+    if item_desc #if the provided info already exists, inc 1, if not set to 1
       item_desc[:count] += 1
     else
       cart[index][:count] = 1

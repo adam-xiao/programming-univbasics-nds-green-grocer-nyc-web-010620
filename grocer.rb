@@ -24,8 +24,9 @@ def consolidate_cart(cart)
     item_name = cart[index][:item]
     consolidated_cart << find_item_by_name_in_collection(item_name, cart)
     index += 1
+
   end
-  print consolidated_cart
+  print cart
 
 end
 

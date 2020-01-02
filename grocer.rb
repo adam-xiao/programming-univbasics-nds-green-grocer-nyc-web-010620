@@ -29,7 +29,7 @@ def consolidate_cart(cart)
       item_desc[:count] += 1
     else
       cart[index][:count] = 1
-      item_desc_count < cart[index]
+      item_desc_count << cart[index]
 
 
 

@@ -36,10 +36,19 @@ def consolidate_cart(cart)
   item_desc_count
 end
 
+def format_coupon(coupon)
+  coupon_cart_format = {
+    :item => "#{coupon[:item]} W/ COUPON"
+  }
+
+
+end
+
 def apply_coupons(cart, coupons)
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
+
 end
 
 def apply_clearance(cart)

@@ -25,7 +25,7 @@ def consolidate_cart(cart)
     cart_items << find_item_by_name_in_collection(cart[index], cart)
     index += 1
   end
-  cart_items
+  cart_items[0]
 end
 
 def apply_coupons(cart, coupons)

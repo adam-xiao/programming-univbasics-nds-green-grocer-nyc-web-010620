@@ -25,7 +25,7 @@ def consolidate_cart(cart)
     non_uniq_items << items_and_desc[:item]
     index += 1
   end
-  prints non_uniq_items
+  print non_uniq_items
 end
 
 def apply_coupons(cart, coupons)

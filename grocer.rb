@@ -74,7 +74,7 @@ def apply_clearance(cart)
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
-  index = 0 
+  index = 0
   while index < cart.length do
     clearance_rate = 0.2
     if cart[index][:clearance]

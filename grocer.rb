@@ -19,9 +19,10 @@ def consolidate_cart(cart)
   # REMEMBER: This returns a new Array that represents the cart. Don't merely
   # change `cart` (i.e. mutate) it. It's easier to return a new thing.
   index = 0
-  items_and_desc = cart[index]
+
   non_uniq_items = []
   while index < cart.length do
+    items_and_desc = cart[index]
     non_uniq_items << items_and_desc[:item]
     index += 1
   end

@@ -26,7 +26,7 @@ def consolidate_cart(cart)
     index += 1
   end
 
-  cart.count(non_uniq_items)
+  puts cart.count(non_uniq_items)
 end
 
 def apply_coupons(cart, coupons)

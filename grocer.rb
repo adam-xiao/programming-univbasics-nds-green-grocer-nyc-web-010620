@@ -20,7 +20,7 @@ def consolidate_cart(cart)
   # change `cart` (i.e. mutate) it. It's easier to return a new thing.
 index = 0
 items_and_desc = cart[index]
-puts cart[0]
+puts items_and_desc[:item]
 end
 
 def apply_coupons(cart, coupons)

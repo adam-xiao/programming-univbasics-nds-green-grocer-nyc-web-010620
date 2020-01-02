@@ -37,6 +37,7 @@ def consolidate_cart(cart)
 end
 
 def format_coupon(coupon)
+
   price_sig_fig = (coupon[:cost] / coupon[:num]).round(2)
 
   {
@@ -52,7 +53,6 @@ def format_coupon_cart(item, coupon, cart)
   formatted_coupon[:clearance] = item[:clearance]
   item[:count] -= coupon[:num]
   cart << formatted_coupon
-
 end
 
 def apply_coupons(cart, coupons)

@@ -25,7 +25,7 @@ def consolidate_cart(cart)
     consolidated_cart << find_item_by_name_in_collection(item_name, cart)
     index += 1
   end
-  return consolidated_cart
+  prints consolidated_cart
 
 end
 

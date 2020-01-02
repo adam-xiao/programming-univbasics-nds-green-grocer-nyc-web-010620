@@ -21,7 +21,7 @@ def consolidate_cart(cart)
   index = 0
   consolidated_cart = []
   while index < cart.length do
-    consolidated_cart << find_item_by_name_in_collection(name, cart)
+    consolidated_cart << find_item_by_name_in_collection(cart[:item], cart)
     index += 1
   end
   consolidated_cart

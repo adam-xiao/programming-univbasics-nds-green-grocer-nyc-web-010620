@@ -27,9 +27,9 @@ def consolidate_cart(cart)
       if find_item_by_name_in_collection(item_desc[:item], cart)
 
         item_desc_count = {
-          :item => item_desc[:item]
-          :price => item_desc[:price]
-          :clearance => item_desc[:clearance]
+          :item => item_desc[:item],
+          :price => item_desc[:price],
+          :clearance => item_desc[:clearance],
           :count => 1
         }
 

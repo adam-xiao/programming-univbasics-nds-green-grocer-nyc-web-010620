@@ -19,7 +19,7 @@ def consolidate_cart(cart)
   # REMEMBER: This returns a new Array that represents the cart. Don't merely
   # change `cart` (i.e. mutate) it. It's easier to return a new thing.
   index = 0
-  cart.count
+  puts cart.count
   #cart = find_item_by_name_in_collection(cart[index], cart[index])
 
   #index = 0

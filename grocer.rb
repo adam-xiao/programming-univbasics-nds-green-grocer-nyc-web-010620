@@ -27,7 +27,7 @@ def consolidate_cart(cart)
     index += 1
   end
 
-  print cart[1]
+  print non_uniq_items
 end
 
 def apply_coupons(cart, coupons)

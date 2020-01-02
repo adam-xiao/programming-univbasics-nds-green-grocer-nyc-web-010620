@@ -30,11 +30,10 @@ def consolidate_cart(cart)
     else
       cart[index][:count] = 1
       item_desc_count << cart[index]
-
-
-
+    end
+    index += 1
   end
-
+  item_desc_count
 end
 
 def apply_coupons(cart, coupons)

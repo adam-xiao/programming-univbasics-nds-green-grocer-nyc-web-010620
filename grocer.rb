@@ -23,6 +23,8 @@ def consolidate_cart(cart)
 
   while index < cart.length do
       item_desc = cart[index]
+      item_count = 1
+
 
       if find_item_by_name_in_collection(item_desc[:item], cart)
 
@@ -30,10 +32,11 @@ def consolidate_cart(cart)
           :item => item_desc[:item],
           :price => item_desc[:price],
           :clearance => item_desc[:clearance],
-          :count => 1
+          :count => item_count
         }
 
         item_desc_count_ary << item_desc_count
+        item_count += 1
       end
       index += 1
     end
